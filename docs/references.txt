@@ -1,0 +1,53 @@
+Supported QT Features for RH850
+https://doc.qt.io/QtForMCUs-2.2/qtul-supported-platforms.html
+
+Architecture
+============
+
+QT
+---------
+Multi C Compiler	-> GreenHills Multi - Paid
+---------
+FreeRTOS          	-> https://freertos.org/
+---------
+RH850/D1M SOC		->	https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/rh850d1m-high-end-automotive-microcontrollers-instrument-cluster-supporting-basic-or-low-level-2d-drawing?documents-title-filter=qt&doc_secondary=visible#overview
+---------
+
+Dev Tools
+=========
+Ubuntu 20.04 LTS
+QT Design Studio 	- UI using QT QML in .ui.qml
+QT Creator 		- UML and C++ IDE
+Green Hills Multi IDE v7.1.6 with Compiler 2018.1.5 and Probe 5.6.4 for V800.
+			- Cross Compiling
+Renesas Graphics Library (v2.0.0a) for D1M1/2(H) for Green Hills Compiler.
+			- For Graphics 
+Renesas Flash Programmer - For Flashing
+
+
+System Requirements
+===================
+Static RAM 		: 20kb for min app, 200kb for typical app
+FPU			: Optional but recommended for high performance
+ROM			: 500kb+ to 10Mb
+				- Number of images, font
+GPU			: option if FPS is less than 20. Its better to have if > 20FPS & animation
+				- Image, Text, Rectangle, 2D Path, 2.5D transformations, Blending
+Stack			: 20kb
+Display Interface	: RGB, MIPI-DSI, LVDS for High resolution
+			  SPI, Parallel for Low resolution
+Graphics Driver		: for QT Quick Ultra lite (DaveHD for RH850)
+Compiler		: C++14
+* Need additional RAM for display frame buffer based on size, cooler depth, FB strategy
+* Note : Number of GUI elements is directly proportional to RAM usage
+
+Getting Started
+===============
+https://doc.qt.io/QtForMCUs-2.2/qtul-using-with-freertos.html#example-main-op-op-cpp-for-running-qt-quick-ultralite-in-a-freertos-tasks
+
+Setting up QT Creator
+=====================
+https://doc.qt.io/QtForMCUs-2.2/qtul-setup-development-host.html#qt-creator-setup
+
+sudo apt update
+sudo apt install build-essential libxcb-xinerama0 cmake

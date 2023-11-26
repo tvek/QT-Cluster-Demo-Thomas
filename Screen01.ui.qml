@@ -11,7 +11,7 @@ import Constants 1.0
 Rectangle {
     width: Constants.width
     height: Constants.height
-    color: Constants.backgroundColor
+    color: "#ffffff"
 
     Text {
         text: qsTr("Hello ThomasFirstQTCluster")
